@@ -1,7 +1,5 @@
 package io.github.severnarch.AntiOfflineSpoofing.common;
 
-import javax.sound.midi.SysexMessage;
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -74,9 +72,7 @@ public class UUIDChecker {
     }
 
     public static UUID getPremiumUUID(String username) {
-        if (usernamesAndUUIDS.containsKey(username)) {
-            return usernamesAndUUIDS.get(username);
-        }
+        if (usernamesAndUUIDS.containsKey(username)) {return usernamesAndUUIDS.get(username);}
         if (usernameHasPremiumUUID(username)) {
             try {
                 URL url = new URL(UUIDChecker.usernameAPI + username);
